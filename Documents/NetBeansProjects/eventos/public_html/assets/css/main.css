@@ -4755,6 +4755,7 @@ th {
 th {
   background: #000;
   color: #fff;
+  background: #4ecdc4;
   text-transform: uppercase;
 }
 
@@ -4763,4 +4764,8 @@ td {
   border-bottom: 2px solid #111;
   color: #333;
   font-size: 18px;
+}
+
+.tabla{
+    margin-top: 10px;
 }

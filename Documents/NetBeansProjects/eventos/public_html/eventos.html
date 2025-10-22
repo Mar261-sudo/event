@@ -1,93 +1,108 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
--->
-<html>
-    <head>
-        <title>Registra tu evento</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
-        <link href="assets/css/main.css" rel="stylesheet">
-    </head>
-    <body>
-        <div class="formbold-main-wrapper">
-        <!-- Author: FormBold Team -->
-        <!-- Learn More: https://formbold.com -->
-    <form action="" method="POST">
+<html lang="es">
+<head>
+    <title>Registrar tu Evento</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="assets/css/main.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="formbold-main-wrapper">
+    <!-- Formulario Registro Evento -->
+    <form action="" method="POST" novalidate>
       <div class="formbold-form-title">
-        <h2 class="">Registrar Evento</h2>
-      </div>
-
-      <div class="formbold-input-flex">
-       <div>
-         <label for="nombre" class="formbold-form-label"> Nombre </label>
-         <input type="text" name="nombre" id="nombre" class="formbold-form-input" required>
-       </div>
-        <div>
-          <label for="lastname" class="formbold-form-label"> Fecha </label>
-          <input
-            type=date
-            id="fecha"
-            class="formbold-form-input"
-            name="fecha" required>
-        </div>
+        <h2>Registrar Evento</h2>
       </div>
 
       <div class="formbold-input-flex">
         <div>
-          <label for="email" class="formbold-form-label"> Municipio </label>
+          <label for="nombre" class="formbold-form-label">Nombre</label>
           <input
             type="text"
-            id="muni"
+            name="nombre"
+            id="nombre"
             class="formbold-form-input"
-            name="muni" required>
+            required
+            placeholder="Nombre del evento"
+          />
         </div>
         <div>
-          <label for="phone" class="formbold-form-label">Artista</label>
+          <label for="fecha" class="formbold-form-label">Fecha</label>
+          <input
+            type="date"
+            id="fecha"
+            name="fecha"
+            class="formbold-form-input"
+            required
+          />
+        </div>
+      </div>
+
+      <div class="formbold-input-flex">
+        <div>
+          <label for="municipio" class="formbold-form-label">Municipio</label>
+          <input
+            type="text"
+            id="municipio"
+            name="municipio"
+            class="formbold-form-input"
+            required
+            placeholder="Municipio donde se realiza el evento"
+          />
+        </div>
+        <div>
+          <label for="artista" class="formbold-form-label">Artista</label>
           <input
             type="text"
             id="artista"
+            name="artista"
             class="formbold-form-input"
-            name="artista" required>
+            required
+            placeholder="Nombre del artista"
+          />
         </div>
       </div>
 
       <div class="formbold-mb-3">
-        <label for="address" class="formbold-form-label">
-          Descripcion
-        </label>
-        <input
-          type="text"
+        <label for="descripcion" class="formbold-form-label">Descripción</label>
+        <textarea
+          id="descripcion"
+          name="descripcion"
           class="formbold-form-input"
-          id="desc"
-          name="desc" required>
+          rows="3"
+          required
+          placeholder="Descripción del evento"
+        ></textarea>
       </div>
-
-       <div class="formbold-input-flex">
-        <div>
-          <label for="state" class="formbold-form-label">Hora Inicio</label>
-          <input
-            type=time
-            id="inicio" 
-            name="inicio" required>
-        </div>
 
       <div class="formbold-input-flex">
         <div>
-          <label for="state" class="formbold-form-label">Hora fin</label>
+          <label for="horaInicio" class="formbold-form-label">Hora Inicio</label>
           <input
-            type=time
-            id="fin"
-            name="fin" required>
+            type="time"
+            id="horaInicio"
+            name="horaInicio"
+            class="formbold-form-input"
+            required
+          />
         </div>
-        
+        <div>
+          <label for="horaFin" class="formbold-form-label">Hora Fin</label>
+          <input
+            type="time"
+            id="horaFin"
+            name="horaFin"
+            class="formbold-form-input"
+            required
+          />
+        </div>
       </div>
-        <a href="index.html" class="formbold-btn">Guardar Evento</a>
-        
+
+      <div style="margin-top: 20px;">
+        <button type="submit" class="btn btn-primary">Guardar Evento</button>
+      </div>
     </form>
   </div>
-
-    </body>
+</body>
 </html>

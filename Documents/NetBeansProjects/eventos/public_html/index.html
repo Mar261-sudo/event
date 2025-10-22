@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Boleteria</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <title>Boleteria - CompraSoftw</title>
+  <meta name="description" content="CompraSoftw - Plataforma para gestionar eventos, boletería y artistas. Registra tus eventos y adquiere boletas fácilmente.">
+  <meta name="keywords" content="eventos, boletería, compra de boletas, artistas, localidades">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -41,26 +41,23 @@
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo d-flex align-items-center">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.webp" alt=""> -->
+      <a href="index.html" class="logo d-flex align-items-center" aria-label="Página principal CompraSoftw">
+        <!-- <img src="assets/img/logo.webp" alt="Logo CompraSoftw"> -->
         <h1 class="sitename">CompraSoftw</h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.html" class="active">Inicio</a></li>
           <li><a href="eventos.html">Registrar Eventos</a></li>
-          <li><a href="boleteria.html">Boleteria</a></li>
+          <li><a href="boleteria.html">Boletería</a></li>
           <li><a href="localidades.html">Localidades</a></li>
           <li><a href="artistas.html">Registrar Artistas</a></li>
           <li><a href="disponibilidad.html">Disponibilidad Eventos</a></li>
-
-        
+          <li><a href="cuentaPersonal.html">Cuenta</a></li>
+          <li><a href="historialCompras.html">Historial</a></li>
         </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list" aria-label="Menú móvil"></i>
       </nav>
-
 
     </div>
   </header>
@@ -77,13 +74,17 @@
             <h1 class="hero-title">CompraSoftw</h1>
             <p class="hero-description">Inicia con nosotros tus eventos</p>
             <div class="event-details mb-4">
-             
+              <!-- Aquí puedes agregar detalles dinámicos -->
             </div>
 
-            <div class="hero-actions" data-aos="fade-up" data-aos-delay="450" text-center mt-4>
-              <a href="eventos.html" class="btn btn-primary btn-lg me-3">Registrar Eventos </a>
-              <a href="disponibilidad.html" class="btn btn-outline-primary btn-lg">Eventos </a>
+            <div class="hero-actions text-center mt-4" data-aos="fade-up" data-aos-delay="450">
+              <a href="eventos.html" class="btn btn-primary btn-lg me-3">Registrar Eventos</a>
+              <a href="disponibilidad.html" class="btn btn-outline-primary btn-lg">Eventos</a>
+              <a href="register.html" class="btn btn-outline-primary btn-lg mt-3">Regístrate</a>
             </div>
+          </div>
+        </div>
+
       </div>
 
     </section>
@@ -92,20 +93,17 @@
 
   <footer id="footer" class="footer position-relative light-background">
     <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">SenaSoftw</strong></p>
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">CompraSoftw</strong></p>
       <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        Diseñado por <a href="https://bootstrapmade.com/" target="_blank" rel="noopener noreferrer">BootstrapMade</a>
       </div>
     </div>
-
   </footer>
 
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center" aria-label="Volver arriba">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
 
   <!-- Preloader -->
   <div id="preloader"></div>

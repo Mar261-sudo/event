@@ -1,81 +1,137 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
--->
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
-        <link href="assets/css/main.css" rel="stylesheet"> 
-    </head>
-    <body>
-        <div>
-            <table class="container">
-             <!-- Fila de la cabecera -->
-             <tr>
-               <th>Fecha</th> 
-               <th>Municipio</th>
-               <th>Departamento</th> 
-               <th>Nombre</th> 
-               <th>Descripcion</th> 
-               <th>Artistas</th>
-               <th>Horarios</th> 
-               <th>Disponibilidad</th> 
-             </tr>
-            <tr>
-                <td>12 abril</td>
-                <td>Cali</td> 
-                <td>Valle del cauca</td> 
-                <td>Feria de cali</td>
-                <td> salsa,licor y fiesta</td>
-                <td>grupo niche</td>
-                <td>jueves a domingos</td>
-                <td> 4 boletas</td>
-            </tr>
-            <tr>
-                <td>12 abril</td>
-                <td>Cali</td> 
-                <td>Valle del cauca</td> 
-                <td>Feria de cali</td>
-                <td> salsa,licor y fiesta</td>
-                <td>grupo niche</td>
-                <td>jueves a domingos</td>
-                <td> 4 boletas</td>
-            </tr>
-            <tr>
-                <td>12 abril</td>
-                <td>Cali</td> 
-                <td>Valle del cauca</td> 
-                <td>Feria de cali</td>
-                <td> salsa,licor y fiesta</td>
-                <td>grupo niche</td>
-                <td>jueves a domingos</td>
-                <td> 4 boletas</td>
-            </tr>
-            <tr>
-                <td>12 abril</td>
-                <td>Cali</td> 
-                <td>Valle del cauca</td> 
-                <td>Feria de cali</td>
-                <td> salsa,licor y fiesta</td>
-                <td>grupo niche</td>
-                <td>jueves a domingos</td>
-                <td> 4 boletas</td>
-            </tr>
-            <tr>
-                <td>12 abril</td>
-                <td>Cali</td> 
-                <td>Valle del cauca</td> 
-                <td>Feria de cali</td>
-                <td> salsa,licor y fiesta</td>
-                <td>grupo niche</td>
-                <td>jueves a domingos</td>
-                <td> 4 boletas</td>
-            </tr>
-           </table>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Disponibilidad Eventos</title>
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/css/main.css" rel="stylesheet" />
+  <style>
+    /* Para indicar fila seleccionada*/
+    tr.seleccionada {
+      background-color: #cce5ff;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="main">
+      <div class="header">
+        <h1>Disponibilidad Eventos</h1>
       </div>
-    </body>
+
+      <table class="tabla table table-bordered" id="tablaDisponibilidad">
+        <thead class="table-dark">
+          <tr>
+            <th>Id</th>
+            <th>Fecha</th>
+            <th>Municipio</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Artista</th>
+            <th>Horarios</th>
+            <th>Boletas Disponibles</th>
+          </tr>
+        </thead>
+        <tbody id="cuerpoDisponibilidad"></tbody>
+      </table>
+
+      <div style="margin-top: 20px;">
+        <button type="button" id="btnComprar" class="btn btn-primary" disabled>Comprar Boleta</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Datos de ejemplo
+    const eventos = [
+      {
+        id: 1,
+        fecha: "2025-11-10",
+        municipio: "Ciudad A",
+        nombre: "Concierto Rock",
+        descripcion: "Gran concierto de rock",
+        artista: "Banda X",
+        horarios: "20:00 - 23:00",
+        boletasDisponibles: 120
+      },
+      {
+        id: 2,
+        fecha: "2025-11-15",
+        municipio: "Ciudad B",
+        nombre: "Festival de Jazz",
+        descripcion: "Música de jazz en vivo",
+        artista: "Jazz Band",
+        horarios: "18:00 - 22:00",
+        boletasDisponibles: 50
+      },
+      {
+        id: 3,
+        fecha: "2025-12-01",
+        municipio: "Ciudad C",
+        nombre: "Evento Cultural",
+        descripcion: "Muestras culturales variadas",
+        artista: "Artistas locales",
+        horarios: "10:00 - 17:00",
+        boletasDisponibles: 200
+      }
+    ];
+
+    const tbody = document.getElementById('cuerpoDisponibilidad');
+    const btnComprar = document.getElementById('btnComprar');
+    let filaSeleccionada = null;
+
+    // Función para cargar datos en la tabla
+    function cargarEventos() {
+      eventos.forEach(evento => {
+        const fila = document.createElement('tr');
+        fila.innerHTML = `
+          <td>${evento.id}</td>
+          <td>${evento.fecha}</td>
+          <td>${evento.municipio}</td>
+          <td>${evento.nombre}</td>
+          <td>${evento.descripcion}</td>
+          <td>${evento.artista}</td>
+          <td>${evento.horarios}</td>
+          <td>${evento.boletasDisponibles}</td>
+        `;
+
+        // Al hacer click en la fila, la seleccionamos
+        fila.addEventListener('click', () => {
+          // Deseleccionamos la anterior
+          if (filaSeleccionada) {
+            filaSeleccionada.classList.remove('seleccionada');
+          }
+          fila.classList.add('seleccionada');
+          filaSeleccionada = fila;
+
+          // Habilitamos botón comprar
+          btnComprar.disabled = false;
+        });
+
+        tbody.appendChild(fila);
+      });
+    }
+
+    // Al hacer click en Comprar Boleta
+    btnComprar.addEventListener('click', () => {
+      if (!filaSeleccionada) {
+        alert('Por favor selecciona un evento primero.');
+        return;
+      }
+      const celdas = filaSeleccionada.children;
+      const nombreEvento = celdas[3].textContent;
+      const fechaEvento = celdas[1].textContent;
+      const artistaEvento = celdas[5].textContent;
+
+      alert(`Has seleccionado comprar boleta para:\nEvento: ${nombreEvento}\nFecha: ${fechaEvento}\nArtista: ${artistaEvento}`);
+
+      // Aquí puedes redirigir a una página de compra o abrir un modal, etc.
+    });
+
+    // Cargar tabla al iniciar
+    cargarEventos();
+  </script>
+</body>
 </html>
