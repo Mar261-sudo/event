@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Registra tu evento</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+        <link href="assets/css/main.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="formbold-main-wrapper">
+        <!-- Author: FormBold Team -->
+        <!-- Learn More: https://formbold.com -->
+    <form action="" method="POST">
+      <div class="formbold-form-title">
+        <h2 class="">Registrar Evento</h2>
+      </div>
+
+      <div class="formbold-input-flex">
+       <div>
+         <label for="nombre" class="formbold-form-label"> Nombre </label>
+         <input type="text" name="nombre" id="nombre" class="formbold-form-input" required>
+       </div>
+        <div>
+          <label for="lastname" class="formbold-form-label"> Fecha </label>
+          <input
+            type=date
+            id="fecha"
+            class="formbold-form-input"
+            name="fecha" required>
+        </div>
+      </div>
+
+      <div class="formbold-input-flex">
+        <div>
+          <label for="email" class="formbold-form-label"> Municipio </label>
+          <input
+            type="text"
+            id="muni"
+            class="formbold-form-input"
+            name="muni" required>
+        </div>
+        <div>
+          <label for="phone" class="formbold-form-label">Artista</label>
+          <input
+            type="text"
+            id="artista"
+            class="formbold-form-input"
+            name="artista" required>
+        </div>
+      </div>
+
+      <div class="formbold-mb-3">
+        <label for="address" class="formbold-form-label">
+          Descripcion
+        </label>
+        <input
+          type="text"
+          class="formbold-form-input"
+          id="desc"
+          name="desc" required>
+      </div>
+
+       <div class="formbold-input-flex">
+        <div>
+          <label for="state" class="formbold-form-label">Hora Inicio</label>
+          <input
+            type=time
+            id="inicio" 
+            name="inicio" required>
+        </div>
+
+      <div class="formbold-input-flex">
+        <div>
+          <label for="state" class="formbold-form-label">Hora fin</label>
+          <input
+            type=time
+            id="fin"
+            name="fin" required>
+        </div>
+        
+      </div>
+        <a href="index.html" class="formbold-btn">Guardar Evento</a>
+        
+    </form>
+  </div>
+
+    </body>
+</html>
